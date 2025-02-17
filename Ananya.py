@@ -43,4 +43,3 @@ validation_generator = train_datagen.flow_from_directory(train_data_dir,
 base_model = InceptionV3(weights='imagenet', include_top = False, input_shape=(imgwidth,imgheight,3))
 for layer in base_model.layers:
     layer.trainable = False
-
