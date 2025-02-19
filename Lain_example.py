@@ -27,7 +27,8 @@ import os
 
 import pandas as pd
 # from six import BytesIO
-# from PIL import Image, ImageDraw, ImageFont
+from PIL import Image #, ImageDraw, ImageFont
+from random import shuffle
 # import shutil
 # from tensorflow.keras.applications.inception_v3 import InceptionV3
 # from tensorflow.keras import layers
@@ -92,14 +93,12 @@ train_generator = train_datagen.flow_from_directory(train_data_dir,
                                                     target_size=(imgwidth, imgheight),
                                                     batch_size=batch_size,
                                                     class_mode='categorical',
-                                                    color_mode='rgb',  # Ensure images are loaded in RGB format
                                                     subset='training')  # Specify 'training' subset
 
 validation_generator = train_datagen.flow_from_directory(train_data_dir,
                                                          target_size=(imgwidth, imgheight),
                                                          batch_size=batch_size,
                                                          class_mode='categorical',
-                                                         color_mode='rgb',  # Ensure images are loaded in RGB format
                                                          subset='validation')  # Specify 'validation' subset
 
 
